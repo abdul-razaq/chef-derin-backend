@@ -1,0 +1,77 @@
+{
+  "kind": "singleType",
+  "collectionName": "documentaries",
+  "info": {
+    "singularName": "documentary",
+    "pluralName": "documentaries",
+    "displayName": "Documentary",
+    "description": "Chef Derin's upcoming documentary information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Chef Derin: The Journey"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "trailerUrl": {
+      "type": "string",
+      "description": "YouTube or Vimeo trailer URL"
+    },
+    "releaseDate": {
+      "type": "date",
+      "description": "Expected release date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["coming_soon", "in_production", "released"],
+      "default": "coming_soon",
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "behindTheScenes": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "synopsis": {
+      "type": "richtext",
+      "description": "Detailed documentary synopsis"
+    },
+    "director": {
+      "type": "string"
+    },
+    "producer": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string",
+      "description": "Expected duration"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

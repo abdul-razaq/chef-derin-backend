@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletters",
+  "info": {
+    "singularName": "newsletter",
+    "pluralName": "newsletters",
+    "displayName": "Newsletter Subscription",
+    "description": "Newsletter email subscriptions"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true,
+      "description": "Subscriber email address"
+    },
+    "source": {
+      "type": "enumeration",
+      "enum": ["home_page", "documentary_page", "other"],
+      "default": "other",
+      "description": "Source of subscription"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the subscription is active"
+    },
+    "subscribedAt": {
+      "type": "datetime",
+      "default": "now",
+      "description": "Subscription date and time"
+    },
+    "unsubscribedAt": {
+      "type": "datetime",
+      "description": "Unsubscription date and time"
+    }
+  }
+}

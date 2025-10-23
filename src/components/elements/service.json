@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_services",
+  "info": {
+    "displayName": "Service",
+    "description": "Individual service item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "string",
+      "required": false
+    },
+    "link": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

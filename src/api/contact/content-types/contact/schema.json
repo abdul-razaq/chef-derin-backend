@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": "Contact form submissions from the website"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Full name of the person contacting"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number (optional)"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company name (optional)"
+    },
+    "subject": {
+      "type": "string",
+      "required": true,
+      "description": "Subject of the inquiry"
+    },
+    "message": {
+      "type": "text",
+      "required": true,
+      "description": "Message content"
+    },
+    "formType": {
+      "type": "enumeration",
+      "enum": ["consultation", "private-chef", "brand-collaboration", "orisun-dining", "media-press"],
+      "required": true,
+      "description": "Type of contact form submitted"
+    },
+    "submittedAt": {
+      "type": "datetime",
+      "required": true,
+      "description": "When the form was submitted"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["new", "read", "replied", "archived"],
+      "default": "new",
+      "required": true,
+      "description": "Status of the contact inquiry"
+    },
+    "budget": {
+      "type": "string",
+      "description": "Budget range (for relevant form types)"
+    },
+    "eventDate": {
+      "type": "date",
+      "description": "Preferred event date (for relevant form types)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location (for relevant form types)"
+    },
+    "guestCount": {
+      "type": "integer",
+      "description": "Number of guests (for relevant form types)"
+    },
+    "dietaryRestrictions": {
+      "type": "text",
+      "description": "Dietary restrictions or preferences"
+    },
+    "additionalInfo": {
+      "type": "json",
+      "description": "Additional form-specific data"
+    }
+  }
+}

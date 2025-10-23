@@ -1,0 +1,116 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": "Chef Derin's complete biography and story"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true,
+      "default": "Dr. Aderinsola Awofala"
+    },
+    "nickname": {
+      "type": "string",
+      "required": true,
+      "default": "Chef Derin"
+    },
+    "title": {
+      "type": "string",
+      "default": "Celebrity Chef & Culinary Artist"
+    },
+    "birthDate": {
+      "type": "date",
+      "default": "1996-05-26"
+    },
+    "birthPlace": {
+      "type": "string",
+      "default": "Lagos, Nigeria"
+    },
+    "biography": {
+      "type": "richtext",
+      "required": true,
+      "description": "Complete life story and journey"
+    },
+    "shortBio": {
+      "type": "text",
+      "required": true,
+      "description": "Brief introduction for homepage"
+    },
+    "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "achievements": {
+      "type": "json",
+      "description": "List of major achievements and milestones"
+    },
+    "timeline": {
+      "type": "json",
+      "description": "Career timeline with dates and events"
+    },
+    "education": {
+      "type": "richtext",
+      "description": "Educational background"
+    },
+    "careerHighlights": {
+      "type": "richtext",
+      "description": "Major career highlights and recognitions"
+    },
+    "personalStory": {
+      "type": "richtext",
+      "description": "Personal challenges and triumphs"
+    },
+    "currentVentures": {
+      "type": "richtext",
+      "description": "Current business ventures and projects"
+    },
+    "philosophy": {
+      "type": "richtext",
+      "description": "Culinary philosophy and approach"
+    },
+    "socialMedia": {
+      "type": "json",
+      "description": "Social media handles and links"
+    },
+    "contactInfo": {
+      "type": "json",
+      "description": "Professional contact information"
+    },
+    "awards": {
+      "type": "json",
+      "description": "Awards and recognitions"
+    },
+    "mediaFeatures": {
+      "type": "json",
+      "description": "TV shows, magazines, interviews"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

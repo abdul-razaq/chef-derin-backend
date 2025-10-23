@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home Page",
+    "description": "Home page content management"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "sections.hero",
+      "required": false
+    },
+    "testimonial": {
+      "type": "component",
+      "component": "sections.testimonial",
+      "required": false
+    },
+    "services": {
+      "type": "component",
+      "component": "sections.services",
+      "required": false
+    },
+    "resume": {
+      "type": "component",
+      "component": "sections.resume",
+      "required": false
+    },
+    "newsletter": {
+      "type": "component",
+      "component": "sections.newsletter",
+      "required": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    }
+  }
+}

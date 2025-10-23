@@ -1,0 +1,138 @@
+{
+  "kind": "collectionType",
+  "collectionName": "private_dinings",
+  "info": {
+    "singularName": "private-dining",
+    "pluralName": "private-dinings",
+    "displayName": "Private Dining",
+    "description": "ORISUN private dining events and bookings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "description": "City/Country for the dining event"
+    },
+    "venue": {
+      "type": "string",
+      "description": "Specific venue name"
+    },
+    "date": {
+      "type": "datetime",
+      "description": "Event date and time"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["coming_soon", "booking_open", "sold_out", "completed"],
+      "default": "coming_soon",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "description": "Price per person"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": ["USD", "NGN", "ZAR"],
+      "default": "USD",
+      "required": true
+    },
+    "maxGuests": {
+      "type": "integer",
+      "description": "Maximum number of guests"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "menuPreview": {
+      "type": "richtext",
+      "description": "3-course menu preview"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "bookingUrl": {
+      "type": "string",
+      "description": "External booking link"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "text",
+      "description": "Special requirements or terms"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "availableSpots": {
+      "type": "integer",
+      "description": "Current available spots (calculated from maxGuests - confirmed bookings)"
+    },
+    "bookingDeadline": {
+      "type": "datetime",
+      "description": "Last date/time for bookings"
+    },
+    "cancellationPolicy": {
+      "type": "richtext",
+      "description": "Cancellation and refund policy"
+    },
+    "eventDuration": {
+      "type": "string",
+      "description": "Duration of the event (e.g., '3 hours')"
+    },
+    "dressCode": {
+      "type": "string",
+      "description": "Dress code requirements"
+    },
+    "ageRestriction": {
+      "type": "string",
+      "description": "Age restrictions if any"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "privateDining"
+    },
+    "waitingList": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::waiting-list.waiting-list",
+      "mappedBy": "diningEvent"
+    }
+  }
+}

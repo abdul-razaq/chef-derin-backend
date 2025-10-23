@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_sections_resumes",
+  "info": {
+    "displayName": "Resume Section",
+    "description": "Resume/CV section with download link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "My Journey"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "default": "Professional Background"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "default": "Discover my culinary journey, from traditional Nigerian roots to international recognition. Download my complete professional profile and achievements."
+    },
+    "ctaText": {
+      "type": "string",
+      "required": false,
+      "default": "Download Resume"
+    },
+    "resumeFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

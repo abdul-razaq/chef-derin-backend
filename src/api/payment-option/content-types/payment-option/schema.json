@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_options",
+  "info": {
+    "singularName": "payment-option",
+    "pluralName": "payment-options",
+    "displayName": "Payment Option",
+    "description": "Payment methods available for ORISUN dining bookings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["stripe", "cryptocurrency", "bank_transfer", "manual"],
+      "required": true,
+      "default": "manual"
+    },
+    "currency": {
+      "type": "enumeration", 
+      "enum": ["USD", "NGN", "ZAR", "BTC", "ETH", "USDT", "LTC"],
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": false,
+      "description": "Wallet address for crypto or account number for bank"
+    },
+    "network": {
+      "type": "string",
+      "required": false,
+      "description": "Network type for crypto (e.g., ERC-20, TRC-20)"
+    },
+    "bankName": {
+      "type": "string",
+      "required": false,
+      "description": "Bank name for bank transfers"
+    },
+    "accountName": {
+      "type": "string",
+      "required": false,
+      "description": "Account holder name"
+    },
+    "instructions": {
+      "type": "richtext",
+      "required": false,
+      "description": "Payment instructions for users"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Order in which to display payment options"
+    },
+    "icon": {
+      "type": "string",
+      "required": false,
+      "description": "Icon identifier for the payment method"
+    },
+    "minimumAmount": {
+      "type": "decimal",
+      "required": false,
+      "description": "Minimum amount for this payment method"
+    },
+    "maximumAmount": {
+      "type": "decimal",
+      "required": false,
+      "description": "Maximum amount for this payment method"
+    },
+    "processingTime": {
+      "type": "string",
+      "required": false,
+      "description": "Expected processing time"
+    },
+    "fees": {
+      "type": "string",
+      "required": false,
+      "description": "Fee information"
+    }
+  }
+}

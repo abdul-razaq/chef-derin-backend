@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipe_books",
+  "info": {
+    "singularName": "recipe-book",
+    "pluralName": "recipe-books",
+    "displayName": "Recipe Book",
+    "description": "Chef Derin's recipe book volumes with growing guides"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "volume": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 3
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 25.00
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "previewImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe"
+    },
+    "totalRecipes": {
+      "type": "integer",
+      "default": 5,
+      "description": "Number of recipes in this volume"
+    },
+    "sampleRecipe": {
+      "type": "richtext",
+      "description": "Preview of one recipe from the book"
+    },
+    "downloadUrl": {
+      "type": "string",
+      "description": "Download link after purchase"
+    },
+    "fileSize": {
+      "type": "string",
+      "description": "PDF file size"
+    },
+    "pageCount": {
+      "type": "integer",
+      "description": "Number of pages"
+    },
+    "features": {
+      "type": "json",
+      "description": "List of book features"
+    },
+    "tableOfContents": {
+      "type": "richtext",
+      "description": "Book contents overview"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "available": {
+      "type": "boolean",
+      "default": true
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

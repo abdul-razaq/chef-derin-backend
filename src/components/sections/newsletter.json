@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_sections_newsletters",
+  "info": {
+    "displayName": "Newsletter Section",
+    "description": "Newsletter subscription section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "Stay Connected"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "default": "Newsletter"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "default": "Join my culinary journey and be the first to know about new recipes, events, and cultural stories. Subscribe to my newsletter for exclusive content and updates."
+    },
+    "placeholderText": {
+      "type": "string",
+      "required": false,
+      "default": "Enter your email address"
+    },
+    "buttonText": {
+      "type": "string",
+      "required": false,
+      "default": "Subscribe"
+    },
+    "successMessage": {
+      "type": "string",
+      "required": false,
+      "default": "Thank you for subscribing! You'll receive our latest updates soon."
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

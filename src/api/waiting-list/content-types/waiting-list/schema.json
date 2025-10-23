@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "waiting_lists",
+  "info": {
+    "singularName": "waiting-list",
+    "pluralName": "waiting-lists",
+    "displayName": "Waiting List",
+    "description": "Customers waiting for ORISUN dining event availability"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false,
+      "description": "Customer email address"
+    },
+    "name": {
+      "type": "string",
+      "description": "Customer name (optional)"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Customer phone number (optional)"
+    },
+    "numberOfGuests": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 20,
+      "description": "Desired number of guests"
+    },
+    "preferredLocation": {
+      "type": "enumeration",
+      "enum": ["Cape Town", "Lagos", "Any"],
+      "default": "Any",
+      "required": true
+    },
+    "preferredDates": {
+      "type": "json",
+      "description": "Array of preferred dates"
+    },
+    "joinedDate": {
+      "type": "datetime",
+      "required": true,
+      "description": "When they joined the waiting list"
+    },
+    "notified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether they've been notified of availability"
+    },
+    "notificationDate": {
+      "type": "datetime",
+      "description": "When they were last notified"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["active", "notified", "converted", "unsubscribed"],
+      "default": "active",
+      "required": true
+    },
+    "source": {
+      "type": "string",
+      "description": "How they found out about ORISUN (optional)"
+    },
+    "specialRequests": {
+      "type": "text",
+      "description": "Any special dietary or other requirements"
+    },
+    "diningEvent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::private-dining.private-dining",
+      "inversedBy": "waitingList"
+    }
+  }
+}

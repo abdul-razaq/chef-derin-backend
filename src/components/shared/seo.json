@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": "SEO meta information"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": false,
+      "default": "Chef Derin - Authentic Nigerian Cuisine & Cultural Storytelling"
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": false,
+      "default": "Experience authentic Nigerian cuisine with Dr. Aderinsola Awofala (Chef Derin). From Lagos to the world, discover rich cultural storytelling through food."
+    },
+    "keywords": {
+      "type": "string",
+      "required": false,
+      "default": "Nigerian cuisine, Chef Derin, authentic food, cultural storytelling, private dining, catering"
+    },
+    "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "canonicalURL": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

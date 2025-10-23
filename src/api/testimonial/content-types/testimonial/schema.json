@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial",
+    "description": "Individual testimonials from clients and collaborators"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true,
+      "description": "The testimonial quote"
+    },
+    "authorName": {
+      "type": "string",
+      "required": true,
+      "description": "Name of the person giving the testimonial"
+    },
+    "authorTitle": {
+      "type": "string",
+      "required": true,
+      "description": "Title or position of the author"
+    },
+    "authorCompany": {
+      "type": "string",
+      "required": false,
+      "description": "Company or organization of the author"
+    },
+    "authorImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Profile image of the author"
+    },
+    "rating": {
+      "type": "integer",
+      "min": 1,
+      "max": 5,
+      "default": 5,
+      "description": "Star rating (1-5)"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this testimonial should be featured prominently"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["private_chef", "consultation", "brand_collaboration", "orisun_dining", "general"],
+      "default": "general",
+      "description": "Category of service this testimonial relates to"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "description": "Display order (lower numbers appear first)"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this testimonial is active and should be displayed"
+    },
+    "dateGiven": {
+      "type": "date",
+      "description": "Date when the testimonial was given"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "authorName",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "Booking",
+    "description": "ORISUN dining event bookings with customer and payment information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bookingReference": {
+      "type": "uid",
+      "required": true,
+      "description": "Unique booking reference number"
+    },
+    "customerName": {
+      "type": "string",
+      "required": true,
+      "description": "Full name of the customer"
+    },
+    "customerEmail": {
+      "type": "email",
+      "required": true,
+      "description": "Customer email address"
+    },
+    "customerPhone": {
+      "type": "string",
+      "required": true,
+      "description": "Customer phone number"
+    },
+    "numberOfGuests": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 20,
+      "description": "Number of guests for the booking"
+    },
+    "specialRequirements": {
+      "type": "text",
+      "description": "Dietary restrictions or special requests"
+    },
+    "totalAmount": {
+      "type": "decimal",
+      "required": true,
+      "description": "Total booking amount"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": ["USD", "NGN", "ZAR"],
+      "default": "USD",
+      "required": true
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": ["pending", "processing", "completed", "failed", "refunded", "cancelled"],
+      "default": "pending",
+      "required": true
+    },
+    "stripePaymentIntentId": {
+      "type": "string",
+      "description": "Stripe Payment Intent ID"
+    },
+    "stripeCustomerId": {
+      "type": "string",
+      "description": "Stripe Customer ID"
+    },
+    "bookingStatus": {
+      "type": "enumeration",
+      "enum": ["confirmed", "pending", "cancelled", "completed", "no_show"],
+      "default": "pending",
+      "required": true
+    },
+    "bookingDate": {
+      "type": "datetime",
+      "required": true,
+      "description": "When the booking was made"
+    },
+    "confirmationEmailSent": {
+      "type": "boolean",
+      "default": false
+    },
+    "receiptEmailSent": {
+      "type": "boolean",
+      "default": false
+    },
+    "reminderEmailSent": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "text",
+      "description": "Internal notes about the booking"
+    },
+    "diningEvent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::private-dining.private-dining",
+      "inversedBy": "bookings"
+    }
+  }
+}

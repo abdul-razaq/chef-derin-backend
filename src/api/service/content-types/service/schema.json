@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": "Chef Derin's professional services"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["consultation", "private_chef", "brand_collaboration"],
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "features": {
+      "type": "json",
+      "description": "List of service features/inclusions"
+    },
+    "pricing": {
+      "type": "richtext",
+      "description": "Pricing information and packages"
+    },
+    "duration": {
+      "type": "string",
+      "description": "Service duration"
+    },
+    "availability": {
+      "type": "enumeration",
+      "enum": ["available", "limited", "unavailable"],
+      "default": "available"
+    },
+    "locations": {
+      "type": "json",
+      "description": "Available locations for the service"
+    },
+    "requirements": {
+      "type": "richtext",
+      "description": "Client requirements and terms"
+    },
+    "process": {
+      "type": "richtext",
+      "description": "How the service works"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "testimonials": {
+      "type": "json",
+      "description": "Client testimonials"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "bookingUrl": {
+      "type": "string",
+      "description": "External booking or contact form"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

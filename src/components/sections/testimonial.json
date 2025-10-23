@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_sections_testimonials",
+  "info": {
+    "displayName": "Testimonial Section",
+    "description": "Testimonial section with multiple testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "What People Say"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "default": "Testimonials"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "description": "Optional description for the testimonials section"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial",
+      "description": "Multiple testimonials to display in this section"
+    },
+    "maxTestimonials": {
+      "type": "integer",
+      "default": 5,
+      "min": 1,
+      "max": 10,
+      "description": "Maximum number of testimonials to display"
+    },
+    "showRatings": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to show star ratings"
+    },
+    "autoRotate": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether testimonials should auto-rotate"
+    },
+    "rotationInterval": {
+      "type": "integer",
+      "default": 5000,
+      "description": "Auto-rotation interval in milliseconds"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

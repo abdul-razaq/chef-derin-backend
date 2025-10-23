@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_sections_services",
+  "info": {
+    "displayName": "Services Section",
+    "description": "Services section with title and service items from collection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "What I Do"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "default": "My Services"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "default": "From intimate private dining experiences to large-scale cultural events, I bring the authentic flavors and rich traditions of Nigerian cuisine to every occasion."
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service",
+      "required": false
+    },
+    "maxServices": {
+      "type": "integer",
+      "default": 6,
+      "min": 1,
+      "max": 12,
+      "description": "Maximum number of services to display"
+    },
+    "showFeaturedOnly": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show only featured services"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["grid", "list", "carousel"],
+      "default": "grid",
+      "description": "Layout style for services display"
+    }
+  }
+}

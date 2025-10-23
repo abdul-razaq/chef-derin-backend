@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero Section",
+    "description": "Hero section with title, subtitle, and call-to-action"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "Dr. Aderinsola Awofala"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "default": "Chef Derin"
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "default": "Authentic Nigerian Cuisine & Cultural Storytelling"
+    },
+    "tagline": {
+      "type": "string",
+      "required": false,
+      "default": "From Lagos to the World"
+    },
+    "ctaText": {
+      "type": "string",
+      "required": false,
+      "default": "Explore My Journey"
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false,
+      "default": "/about"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.stat",
+      "required": false
+    }
+  }
+}

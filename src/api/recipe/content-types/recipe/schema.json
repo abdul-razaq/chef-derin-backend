@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe",
+    "description": "Culinary recipes with ingredients and instructions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "ingredients": {
+      "type": "json",
+      "required": true
+    },
+    "instructions": {
+      "type": "richtext",
+      "required": true
+    },
+    "prepTime": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "cookTime": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "servings": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": ["Easy", "Medium", "Hard"],
+      "default": "Medium",
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "recipes"
+    },
+    "chef": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chef.chef",
+      "inversedBy": "recipes"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "nutritionInfo": {
+      "type": "json",
+      "description": "Nutritional information per serving"
+    },
+    "growingGuides": {
+      "type": "richtext",
+      "description": "How to grow the main ingredients (e.g., melon, okra)"
+    },
+    "mainIngredients": {
+      "type": "json",
+      "description": "List of main ingredients that can be grown"
+    },
+    "recipeBook": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe-book.recipe-book",
+      "inversedBy": "recipes"
+    },
+    "culturalSignificance": {
+      "type": "richtext",
+      "description": "Cultural background and significance of the dish"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

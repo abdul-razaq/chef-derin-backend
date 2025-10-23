@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chefs",
+  "info": {
+    "singularName": "chef",
+    "pluralName": "chefs",
+    "displayName": "Chef",
+    "description": "Chef profiles and information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "bio": {
+      "type": "richtext",
+      "required": true
+    },
+    "specialties": {
+      "type": "json"
+    },
+    "experience": {
+      "type": "integer",
+      "min": 0
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "chef"
+    },
+    "socialMedia": {
+      "type": "json"
+    },
+    "awards": {
+      "type": "json"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
