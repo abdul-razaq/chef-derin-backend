@@ -28,15 +28,15 @@ const galleryData = [
     featured: true,
     order: 1,
     images: [
-      "/images/food/Chef Derin + Eralimad + PP -392.jpg",
-      "/images/food/Chef Derin + Eralimad + PP-207.jpg",
-      "/images/food/Chef Derin + Eralimad + PP-225.jpg",
-      "/images/food/Chef Derin + Eralimad + PP-231.jpg",
-      "/images/food/Chef Derin + Eralimad + PP-249.jpg",
-      "/images/food/Chef Derin + Eralimad + PP-259.jpg",
-      "/images/food/IMG_5113.JPG",
-      "/images/food/IMG_5114.JPG",
-      "/images/food/IMG_5137.jpg"
+      "/images/Chef Derin + Eralimad + PP -392.jpg",
+      "/images/Chef Derin + Eralimad + PP-207.jpg",
+      "/images/Chef Derin + Eralimad + PP-225.jpg",
+      "/images/Chef Derin + Eralimad + PP-231.jpg",
+      "/images/Chef Derin + Eralimad + PP-249.jpg",
+      "/images/Chef Derin + Eralimad + PP-259.jpg",
+      "/images/IMG_5113.jpg",
+      "/images/IMG_5114.jpg",
+      "/images/IMG_5137.jpg"
     ]
   },
   {
