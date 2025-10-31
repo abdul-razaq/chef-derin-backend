@@ -7,6 +7,7 @@ export default [
     config: {
       origin: [
         "http://localhost:3000", // Development frontend
+        "http://localhost:3001", // Development frontend (alternative port)
         process.env.FRONTEND_URL, // Production frontend
         "https://*.vercel.app", // Vercel preview deployments
       ],
