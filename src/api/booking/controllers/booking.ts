@@ -199,15 +199,64 @@ export default factories.createCoreController('api::booking.booking', ({ strapi 
           data: {
             paymentStatus: 'completed',
             bookingStatus: 'confirmed',
-            stripePaymentIntentId: paymentIntentId
+            stripePaymentIntentId: paymentIntentId,
+            confirmationEmailSent: true
           }
         });
+
+        // Get dining event details for email
+        let eventTitle = 'ORISUN Dining Experience';
+        const bookingWithRelations = booking as any;
+        if (bookingWithRelations.diningEvent) {
+          try {
+            const diningEvent = await strapi.documents('api::private-dining.private-dining').findFirst({
+              filters: { documentId: bookingWithRelations.diningEvent.documentId }
+            });
+            if (diningEvent) {
+              eventTitle = diningEvent.title;
+            }
+          } catch (eventError) {
+            console.log('Could not fetch dining event details:', eventError);
+          }
+        }
+
+        // Send confirmation emails
+        try {
+          const emailService = strapi.service('api::booking.email-service');
+          const emailData = {
+            customerName: booking.customerName,
+            customerEmail: booking.customerEmail,
+            bookingReference: booking.bookingReference,
+            eventTitle: eventTitle,
+            bookingDate: booking.bookingDate,
+            numberOfGuests: booking.numberOfGuests,
+            totalAmount: booking.totalAmount,
+            currency: booking.currency,
+            paymentStatus: 'completed'
+          };
+
+          // Send customer confirmation email
+          const customerEmailResult = await emailService.sendCustomerConfirmation(emailData);
+          if (!customerEmailResult.success) {
+            console.error('Failed to send customer confirmation email:', customerEmailResult.error);
+          }
+
+          // Send admin notification email
+          const adminEmailResult = await emailService.sendAdminNotification(emailData);
+          if (!adminEmailResult.success) {
+            console.error('Failed to send admin notification email:', adminEmailResult.error);
+          }
+
+        } catch (emailError) {
+          console.error('Error sending confirmation emails:', emailError);
+          // Don't fail the payment confirmation if email fails
+        }
         
         ctx.body = {
           success: true,
           booking: updatedBooking,
           paymentStatus: paymentResult.status,
-          message: 'Payment confirmed and booking updated'
+          message: 'Payment confirmed and booking updated. Confirmation emails sent.'
         };
       } else {
         ctx.status = 400;

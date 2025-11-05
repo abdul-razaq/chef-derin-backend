@@ -68,6 +68,7 @@ export default {
             'api::booking.booking.create',
             'api::private-dining.private-dining.find',
             'api::private-dining.private-dining.findOne',
+            'api::waiting-list.waiting-list.create',
             'api::gallery.gallery.find',
             'api::gallery.gallery.findOne',
             'api::payment-option.payment-option.find',
@@ -83,7 +84,11 @@ export default {
             'api::documentary.documentary.find',
             'api::documentary.documentary.findOne',
             'api::recipe-book.recipe-book.find',
-            'api::recipe-book.recipe-book.findOne'
+            'api::recipe-book.recipe-book.findOne',
+            'api::recipe-book.recipe-book.create',
+            'api::recipe-book.recipe-book.createPaymentIntent',
+            'api::recipe-book.recipe-book.confirmPayment',
+            'api::recipe-book.recipe-book.generateDownload'
           ];
 
           // Enable each permission

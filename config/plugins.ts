@@ -1,3 +1,14 @@
 export default {
-  // Add plugin configurations here if needed
+  email: {
+    config: {
+      provider: 'sendmail',
+      providerOptions: {
+        dkim: false,
+      },
+      settings: {
+        defaultFrom: 'chefderinbookings@gmail.com',
+        defaultReplyTo: 'chefderinbookings@gmail.com',
+      },
+    },
+  },
 };

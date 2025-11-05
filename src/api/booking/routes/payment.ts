@@ -10,6 +10,7 @@ export default {
       path: '/bookings/create-payment-intent',
       handler: 'booking.createPaymentIntent',
       config: {
+        auth: false,
         policies: [],
         middlewares: [],
       },
@@ -19,6 +20,7 @@ export default {
       path: '/bookings/create-booking',
       handler: 'booking.createBooking',
       config: {
+        auth: false,
         policies: [],
         middlewares: [],
       },
@@ -28,6 +30,7 @@ export default {
       path: '/bookings/confirm-payment',
       handler: 'booking.confirmPayment',
       config: {
+        auth: false,
         policies: [],
         middlewares: [],
       },
